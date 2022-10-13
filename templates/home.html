@@ -1,0 +1,201 @@
+<!-- HTML code to add icon in the title bar -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8" />
+          
+        <title>
+            Backorder prediction
+        </title>
+          
+        <!-- add icon link -->
+        <link rel = "icon" href = 
+"https://icons.veryicon.com/png/256/application/nodeasy/prediction-scheme.png" 
+        type = "image/x-icon">
+          
+</head>
+<style>
+body {
+  background-image: url('https://noahsarkservice.com/wp-content/uploads/2021/04/general.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+<!DOCTYPE html>
+<html>
+    <center>
+        <div class="header_p1">
+            <img src="https://th.bing.com/th/id/R.c04a3f4e672a7291547a48ee46d2267e?rik=4Kps%2b50%2f%2bLUI%2bA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-7alJ9HotKe4%2fVS2IQU5xXOI%2fAAAAAAAATdk%2ff98FkkwPamc%2fs1600%2fbackordered.png&ehk=pqIJGfFDaRvrIYjhnc4%2fV4Jr2NxkoHCu%2f920ixmU6R0%3d&risl=&pid=ImgRaw&r=0"/>
+        </div>
+    </center>
+    </head>
+
+<body>
+
+<h2 style="text-align:center">Backorder Prediction</h2 style="text-align:center">
+
+
+
+  
+
+     <!-- Main Input For Receiving Query to our ML -->
+     <center>
+     <div class="text-center">
+
+      <form action="{{ url_for('predict')}}"method="post">
+        <h3 style="text-align:center">Source Performance</h3 style="text-align:center">
+
+          <div class="d-flex flex-row justify-content-center">
+                <input type="text" name='perf_6_month_avg' placeholder='6 Month Average' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='perf_12_month_avg' placeholder='12 Month Average' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               
+                </div> </center>
+              <center>
+                <h3 style="text-align:center"></h3 style="text-align:center">
+
+                  <div class="d-flex flex-row justify-content-center">
+                        <input type="text" name='binary_pieces_past_due' placeholder='Binary Pieces Past Due' required="required" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" name='binary_local_bo_qty' placeholder='Binary Local Bo Quantity' required="required" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="text" name='local_bo_qty' placeholder='Local Bo Quantity' required="required" />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </div> </center>
+                      <center>
+                <h3 style="text-align:center">Inventory Details</h3 style="text-align:center">
+        <div class="d-flex flex-row justify-content-center">
+                <input type="text" name='national_inv' placeholder='National investment' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='lead_time' placeholder='Lead Time' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='in_transit_qty' placeholder='In Transit Quantity' required="required" />
+          </div> </center>
+        <center>
+            
+
+<h3 style="text-align:center">Forecast Sales</h3 style="text-align:center">
+
+    <div class="d-flex flex-row justify-content-center">
+            <input type="text" name='forecast_3_month' placeholder='Forecast 3 Months' required="required" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name='forecast_6_month' placeholder='Forecast 6 Months' required="required" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" name='forecast_9_month' placeholder='Forecast 9 Months' required="required" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div> </center>
+    <center>
+
+<h3 style="text-align:center"></h3 style="text-align:center">
+
+      <h3 style="text-align:center"></h3 style="text-align:center">
+      <div class="d-flex flex-row justify-content-center">
+        <input type="text" name='potential_issue' placeholder='Potential Issue' required="required" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name='pieces_past_due' placeholder='Pieces Past Due' required="required" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" name='min_bank' placeholder='Minimum Bank' required="required" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div> </center>
+      <center>
+      <h3 style="text-align:center">Sales Quantity</h3 style="text-align:center">
+
+        <form action="{{ url_for('predict')}}"method="post">
+            <div class="d-flex flex-row justify-content-center">
+                <input type="text" name='sales_1_month' placeholder='Sales 1 Month' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='sales_3_month' placeholder='Sales 3 Months' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='sales_6_month' placeholder='Sales 6 Months' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='sales_9_month' placeholder='Sales 9 Months' required="required" />
+                </div> </center>
+                <center>      
+      
+<h3 style="text-align:center">General Risk Flag</h3 style="text-align:center">
+
+      <div class="d-flex flex-row justify-content-center">
+                <input type="text" name='deck_risk' placeholder='Deck Risk' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='oe_constraint' placeholder='Oe Constraint' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='ppap_risk' placeholder='Ppap Risk' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='stop_auto_buy' placeholder='Stop Auto Buy' required="required" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name='rev_stop' placeholder='Rev Stop' required="required" />
+              </div> </center>
+        <center>
+    <br>
+</div></center>
+    <br>
+    <style>
+button {
+        display: inline-block;
+        background-color: #170b17;
+        border-radius: 5px;
+        border: 2px double #cccccc;
+        color: #eeeeee;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+        width: 100px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -10px;
+        transition: 0.5s;
+      }
+button:hover {
+        background-color: #170b17;
+      }
+      button:hover span {
+        padding-right: 12px;
+      }
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    </style>
+  <body> <center>
+    <button>
+      <span>Predict</span>
+    </button>
+             </div> </center>
+    </form>
+</div>
+   <br>
+   <br>
+  <center><h2>
+<div style="color:white">
+   {{ prediction_text }}
+
+ </div></h2></center>
+
+<h4 style=
+"text-align:center;
+color:white">
+Ramesh kumar M(21401031)</h4 style=
+"text-align:center;
+color:white">
+
+
+
+
+
+</body>
+</html>
